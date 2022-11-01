@@ -1,9 +1,9 @@
 # Heart-attack-prediction-model
 binary prediction model using matlab
 
-Age : Age of the patient
+##Age : Age of the patient
 
-Sex : Sex of the patient
+##Sex : Sex of the patient
 
 cp : Chest Pain type
 
