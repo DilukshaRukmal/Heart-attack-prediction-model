@@ -1,17 +1,17 @@
 # Heart-attack-prediction-model
 
 ---
-binary prediction model using matlab
+binary prediction model using matlab ▶️:
 
-Kaggle Dataset: [Heart Attack]([https://www.example.com](https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset))
+**Kaggle Dataset:** [Heart Attack](https://www.example.com](https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset)
 
 ---
 
-## 1.Age : Age of the patient
+## 1. Age : Age of the patient
 
-## 2.Sex : Sex of the patient
+## 2. Sex : Sex of the patient
 
-## 3.cp : Chest Pain type
+## 3. cp : Chest Pain type
 
 Value 0: typical angina
 
@@ -21,34 +21,34 @@ Value 2: non-anginal pain
 
 Value 3: asymptomatic
 
-## 4.trtbps : resting blood pressure (in mm Hg)
+## 4. trtbps : resting blood pressure (in mm Hg)
 
-## 5.chol: cholesterol in mg/dl fetched via BMI sensor
+## 5. chol: cholesterol in mg/dl fetched via BMI sensor
 
-## 6.fbs: (fasting blood sugar > 120 mg/dl)
+## 6. fbs: (fasting blood sugar > 120 mg/dl)
 
 1 = true
 
 0 = false
 
-## 7.rest_ecg: resting electrocardiographic results
+## 7. rest_ecg: resting electrocardiographic results
 Value 0: normal
 
 Value 1: having ST-T wave abnormality (T wave inversions and/or ST elevation or depression of > 0.05 mV)
 
 Value 2: showing probable or definite left ventricular hypertrophy by Estes' criteria
 
-## 8.thalach: maximum heart rate achieved
+## 8. thalach: maximum heart rate achieved
 
-## 9.exang: exercise induced angina
+## 9. exang: exercise induced angina
 
 1 = yes
 
 0 = no
 
-## 10.old peak: ST depression induced by exercise relative to rest
+## 10. old peak: ST depression induced by exercise relative to rest
 
-## 11.slp: the slope of the peak exercise ST segment
+## 11. slp: the slope of the peak exercise ST segment
 
 0 = unsloping
 
@@ -56,9 +56,9 @@ Value 2: showing probable or definite left ventricular hypertrophy by Estes' cri
 
 2 = downsloping
 
-## 12.caa: number of major vessels (0-3)
+## 12. caa: number of major vessels (0-3)
 
-## 13.thall : thalassemia
+## 13. thall : thalassemia
 
 0 = null
 
