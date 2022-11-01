@@ -1,6 +1,7 @@
 # Heart-attack-prediction-model
 
 ---
+![alt text](https://www.nsmedicaldevices.com/wp-content/uploads/sites/2/2021/05/shutterstock_1303927084.png)
 binary prediction model using matlab ▶️:
 
 **Kaggle Dataset:** [Heart Attack](https://www.example.com](https://www.kaggle.com/datasets/rashikrahmanpritom/heart-attack-analysis-prediction-dataset)
