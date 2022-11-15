@@ -1,6 +1,4 @@
-%% Coursework 2023 -- Part 1
 
-%% Main Body -- Do NOT edit
 
 if ~exist('suppress_figures','var')
     clc; clear; close all;
@@ -11,27 +9,27 @@ end
 
 load('dataset_heart_attack.mat'); % loads full data set: X, t and x_titles
 
-% Section 1
+
 tn =                    true_negative(0.80,0.85,0.05);
 
-% Section 2
+
 [X_tr,t_tr,X_te,t_te] = split_tr_te(X, t, 0.7); % tr stands for training, te for test
 
-% Section 3
+
 t_hat_te_sex =          X_te(:,find(x_titles=="sex"));
 t_hat_te_fbs =          X_te(:,find(x_titles=="fbs"));
 L_D_te_sex =            detection_error_loss(t_hat_te_sex, t_te);
 L_D_te_fbs =            detection_error_loss(t_hat_te_fbs, t_te);
 
-% Section 4
+
 L_D_func_te_sex =       loss_func(t_hat_te_sex, t_te);
 L_D_func_te_fbs =       loss_func(t_hat_te_fbs, t_te);
 
-% Section 5
+
 X2_tr =                 X_M(X_tr,2); % will be used in section 6
 X9_te =                 X_M(X_te,9); % some other instantiation
 
-% Section 6
+
 theta2_ls =             LSsolver(X2_tr, t_tr);
 Ngrid =                 101; % number of ponts in grid
 [mFeature1,mFeature2] = meshgrid(linspace(50,250,Ngrid),linspace(100,600,Ngrid));
@@ -48,10 +46,10 @@ if show_plots
     xlabel('$x^{(1)}$','interpreter','latex'); ylabel('$x^{(2)}$','interpreter','latex'); colorbar; title('$\hat{t}_3(X|\theta_3)$','interpreter','latex'); legend show;
 end
 
-% Section 8
+
 mse_vs_M_non_reversed = mse_vs_M( X_tr,          t_tr, X_te,          t_te);
 
-% Section 9
+
 X_tr_reversed = fliplr(X_tr);
 X_te_reversed = fliplr(X_te);
 mse_vs_M_reversed =     mse_vs_M( X_tr_reversed, t_tr, X_te_reversed, t_te);
@@ -74,7 +72,7 @@ function out = LSsolver(X,t) % Least Square solver
 end
 
 
-%% Functions -- Fill in the functions with your own code from this point
+
 
 % Function 1
 function tn= true_negative(sens, spec, prior)
