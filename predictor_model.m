@@ -74,12 +74,12 @@ end
 
 
 
-% Function 1
+
 function tn= true_negative(sens, spec, prior)
     tn = spec*(1-prior)/((1-sens)*prior+spec*(1-prior));
 end
 
-% Function 2
+
 function [X_tr,t_tr,X_te,t_te] = split_tr_te(X, t, eta)
     N =             length(t);
     N_tr =          round(N*eta);
@@ -89,7 +89,7 @@ function [X_tr,t_tr,X_te,t_te] = split_tr_te(X, t, eta)
 	t_tr =          t(N-N_tr+1:end,:);
 end
 
-% Function 3
+
 function loss = detection_error_loss(t_hat, t)
     N = length(t);
     loss_arr = t_hat~=t;
@@ -97,7 +97,7 @@ function loss = detection_error_loss(t_hat, t)
     loss = loss/N;
 end
 
-% Function 4
+
 function loss = loss_func(t_hat, t)
     N = length(t);
     loss = 0;
@@ -113,7 +113,7 @@ function loss = loss_func(t_hat, t)
     loss =  loss/N;
 end
 
-% Function 5
+
 function out = X_M(X,M)
     X_splited = X(:,1:M);
     N = size(X,1);
@@ -121,28 +121,35 @@ function out = X_M(X,M)
     out = cat(2,ones_col,X_splited);
 end
 
-% Function 6
+
 function out = linear_combiner( X ,  theta )
     out = X*theta;
 end
 
-% Function 7
 function out = mse_loss(t_hat ,  t)
     out = (sum((t-t_hat).^2))/size(t,1);
 end
 
-% Function 8
+
 function out = mse_vs_M( X_tr, t_tr, X_te, t_te)
-    X = cat(1,X_tr,X_te);
-    t = cat(1,t_tr,t_te);
+    X_tr = cat(1,X_tr,X_te);
+    t_tr = cat(1,t_tr,t_te);
     
-    
-    out =               (0:13).';
+    out = zeros(1,14);
+    for i = 0:13
+        loss = 0;
+        X_tr_M = X_M(X_tr,i);
+        thetaM_ls = LSsolver(X_tr_M, t_tr);
+        t_hatM = linear_combiner(X_tr_M, thetaM_ls);
+        loss = mse_loss(t_hatM,t_tr);
+        out(i+1) = loss;    
+    end
+    out = out.';
 end
 
 % Function 9
 function discussion()
-    disp('discussion:');
-    disp('<ADD SHORT TEXT HERE.>');
+    disp(':');
+    disp('');
 end
 
